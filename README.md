@@ -1,4 +1,4 @@
-## Stock Auto Trader Platform for chinese
+## Stock Auto Trader Platform for Chinese
 
 #### feature of the project
 - Auto choose stock code
