@@ -15,5 +15,5 @@ def json_reader(path=''):
 def json_writer(path='', res=''):
     assert path != '', "路径为空"
     assert res != '', "写入数据为空"
-    with open(path, "a") as f:
+    with open(path, "w") as f:
         json.dump(res, f, ensure_ascii=False, indent=4)

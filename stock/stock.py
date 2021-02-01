@@ -40,7 +40,13 @@ class Stock:
     @staticmethod
     def get_stock_of_industry(sector):
         stock_sector_detail_df = ak.stock_sector_detail(sector)
-        stock_sector_detail_df = stock_sector_detail_df.sort_values(by='changepercent', ascending=False)
+        try:
+            stock_sector_detail_df = stock_sector_detail_df.sort_values(by='changepercent', ascending=False)
+        except TypeError as e:
+            stock_sector_detail_df['changepercent'] = stock_sector_detail_df['changepercent'].astype('float')
+
+            stock_sector_detail_df = stock_sector_detail_df.sort_values(by='changepercent', ascending=False)
+
         return stock_sector_detail_df
 
     # can't use due to not realtime
